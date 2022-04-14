@@ -1,0 +1,275 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500;600;800;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Popins', sans-serif;
+}
+
+@-webkit-keyframes menuOpen {
+  from {
+    width: 4em;
+  }
+  to {
+    width: 300px;
+  }
+}
+
+@keyframes menuOpen {
+  from {
+    width: 4em;
+  }
+  to {
+    width: 300px;
+  }
+}
+
+@-webkit-keyframes menuClose {
+  from {
+    width: 300px;
+  }
+  to {
+    width: 4em;
+  }
+}
+
+@keyframes menuClose {
+  from {
+    width: 300px;
+  }
+  to {
+    width: 4em;
+  }
+}
+
+@-webkit-keyframes apear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes apear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes disapear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes disapear {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.container .main-page {
+  width: 100%;
+  height: inherit;
+  margin: 0.25em;
+  -webkit-animation: none;
+          animation: none;
+  border: 3px solid black;
+}
+
+.container .main-page .main-pp {
+  height: inherit;
+  width: inherit;
+}
+
+.container .main-page .main-pp img {
+  width: 200px;
+}
+
+.container .h-menu-opened {
+  position: fixed;
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  height: inherit;
+  margin: 0em 0em 0.25em 0em;
+  border: 1px solid white;
+  padding: 1em 1em 1em 0em;
+  -webkit-animation: menuOpen 0.8s;
+          animation: menuOpen 0.8s;
+  background-color: #135ee9;
+  z-index: 1;
+}
+
+.container .h-menu-opened .close-btn {
+  height: 2em;
+  width: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+}
+
+.container .h-menu-opened .intro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: inherit;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .h-menu-opened .intro .pp-opened {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 200px;
+  border-radius: 50%;
+  border: 5px solid white;
+  -webkit-box-shadow: 5px 1px 10px;
+          box-shadow: 5px 1px 10px;
+  justify-self: center;
+  margin-bottom: 2em;
+  -webkit-animation: apear 1s;
+          animation: apear 1s;
+}
+
+.container .h-menu-opened .intro h1 {
+  color: white;
+  margin-bottom: 0.8em;
+}
+
+.container .h-menu-opened .intro p {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  padding: 0.8em;
+  color: white;
+  margin-bottom: 10;
+  text-align: justify;
+}
+
+.container .h-menu-opened .menu {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+}
+
+.container .h-menu-opened .menu ul {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: 100%;
+  padding: 0.25em;
+}
+
+.container .h-menu-opened .menu ul li {
+  height: 1.2em;
+  width: 95%;
+  padding: 0.8em;
+  list-style-type: none;
+}
+
+.container .h-menu-opened .menu ul li a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+.container .h-menu-opened .menu ul li:hover {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+  background-color: #538cf5;
+}
+
+.container .h-menu-closed {
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 4em;
+  height: 100%;
+  margin: 0em 0em 0.25em 0em;
+  border-radius: 0px 3px 3px 0px;
+  border: 1px 1px solid white;
+  -webkit-animation: menuClose 0.6s;
+          animation: menuClose 0.6s;
+  background-color: #0748c0;
+  z-index: 1;
+}
+
+.container .h-menu-closed .h-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em;
+}
+
+.container .h-menu-closed .h-menu img {
+  width: inherit;
+  height: 2em;
+  -webkit-animation: apear 0.3s;
+          animation: apear 0.3s;
+  color: white;
+}
+
+.container .h-menu-closed .pp-closed {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 1em;
+}
+
+.container .h-menu-closed .pp-closed img {
+  width: 3em;
+  border-radius: 50%;
+  -webkit-animation: apear 1s;
+          animation: apear 1s;
+  border: 2px solid white;
+}
+/*# sourceMappingURL=styles.css.map */
