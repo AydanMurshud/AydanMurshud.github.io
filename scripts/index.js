@@ -9,8 +9,8 @@ const profilePicClosed = document.getElementById('pp-closed');
 function menuOpen() {
     hMenu.addEventListener('click', () => {
         
-        sideMenuOpen.style.display = 'block';
-        sideMenuOpen.style.width = '300px'
+        sideMenuOpen.style.display = 'flex';
+        sideMenuOpen.style.width = '300px';
         sideMenuclosed.style.display = 'none';
     });
    
@@ -19,13 +19,8 @@ menuOpen()
 
 function menuClose() {
     closeIcon.addEventListener('click', () => {
-        setTimeout(500);
-        profilePicClosed.style.animation = 'disapear 0.4s'
-       
         sideMenuclosed.style.display = 'block';
         sideMenuOpen.style.display = 'none';
-        
-        
     });
 }
 menuClose()
