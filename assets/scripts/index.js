@@ -22,5 +22,9 @@ function menuClose() {
         sideMenuclosed.style.display = 'block';
         sideMenuOpen.style.display = 'none';
     });
+    mainPage.addEventListener('click', () => {
+        sideMenuclosed.style.display = 'block';
+        sideMenuOpen.style.display = 'none';
+    })
 }
 menuClose()
