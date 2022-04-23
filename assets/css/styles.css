@@ -117,11 +117,11 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: inherit;
+  width: 100%;
   height: 100%;
   margin-left: 1px;
   height: inherit;
-  margin-left: 4em;
+  margin-left: 2em;
   -webkit-animation: mainAnim 0.4s;
           animation: mainAnim 0.4s;
   background-image: url(/assets/images/19366.jpg);
@@ -141,13 +141,15 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 2em;
-  width: 800px;
+  height: 800px;
+  max-width: 800px;
   height: auto;
   background-color: white;
   border: white solid 2px;
   border-radius: 20px;
   -webkit-box-shadow: 3px 5px 30px;
           box-shadow: 3px 5px 30px;
+  margin: 4em;
 }
 
 .container .main-page .card-container h2 {
