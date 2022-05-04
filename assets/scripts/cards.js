@@ -19,7 +19,8 @@ mainPageSetUp()
 const cardElement = document.createElement('div');
 cardElement.id = 'card-content';
 cardElement.className = 'card-content'
-cardElement.innerHTML = '<p>placeholder</p>';
+cardElement.innerHTML = '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, praesentium maxime cumque cum facere unde vero eius numquam, quas animi a fugit cupiditate possimus corporis enim placeat, provident velit inventore? Cupiditate eveniet culpa eos minus hic nihil quasi recusandae facilis.</p>';
+
 document.getElementById('card-container').appendChild(cardElement);
 const education = `<img src="" alt="">
 <h2>Education</h2>
@@ -63,7 +64,26 @@ function closeMenu() {
 function cardContent() {
     mE1.addEventListener('click', () => {
         document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = education
+        cardElement.innerHTML = education;
+        
+        closeMenu()
+    });
+    mE2.addEventListener('click', () => {
+        document.getElementById('card-container').appendChild(cardElement);
+        cardElement.innerHTML = `<p>You suck!</p>`;
+        
+        closeMenu()
+    });
+    mE3.addEventListener('click', () => {
+        document.getElementById('card-container').appendChild(cardElement);
+        cardElement.innerHTML = education;
+        
+        closeMenu()
+    });
+    mE4.addEventListener('click', () => {
+        document.getElementById('card-container').appendChild(cardElement);
+        cardElement.innerHTML = education;
+        
         closeMenu()
     });
     
