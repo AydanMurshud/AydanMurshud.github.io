@@ -70,19 +70,19 @@ function cardContent() {
     });
     mE2.addEventListener('click', () => {
         document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = `<p>You suck!</p>`;
+        cardElement.innerHTML = `<p>Projects</p>`;
         
         closeMenu()
     });
     mE3.addEventListener('click', () => {
         document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = education;
+        cardElement.innerHTML = `<p>About me</p>`;
         
         closeMenu()
     });
     mE4.addEventListener('click', () => {
         document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = education;
+        cardElement.innerHTML =  `<p>Contacts</p>`;
         
         closeMenu()
     });
