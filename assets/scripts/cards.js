@@ -15,13 +15,57 @@ function mainPageSetUp() {
     
 }
 mainPageSetUp()
-let cardElement = 'hello word';
+
+const cardElement = document.createElement('div');
+cardElement.id = 'card-content';
+cardElement.className = 'card-content'
+cardElement.innerHTML = '<p>placeholder</p>';
+document.getElementById('card-container').appendChild(cardElement);
+const education = `<img src="" alt="">
+<h2>Education</h2>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est saepe inventore labore. Nihil tempora omnis deserunt nobis debitis cumque quibusdam et blanditiis asperiores sint magnam dolor exercitationem porro dolore reiciendis architecto quidem, cupiditate ducimus provident nam. Aut sequi incidunt ab praesentium! Cupiditate eveniet repellat hic autem aut tempora iste quis tenetur sed consectetur delectus veritatis officia nobis, qui aspernatur.</p>
+<ul class="institution">
+  <li>
+      <img src="assets/images/logo_bg.png" alt="">
+      <ul>
+          <li>
+            <p>University of Economics - Varna</p>
+          </li>
+          <li>
+            <li>Bachelor degree - 2012/2016</li>
+            <li>Master degree - 2016/2017</li>
+          </li>
+      </ul>
+    </li>
+  <li>
+    <img src="assets/images/Logo_Software_University_(SoftUni)_-_blue.png" alt="">
+    <ul>
+        <li>
+          <p>Softwere University</p>
+        </li>
+        <li>
+          <li>Programming Basics - 2022</li>
+          <li>Programming Fundamentals - Pending...</li>
+        </li> 
+    </ul>
+  </li>
+</ul>
+</div>
+</div>`
+
+function closeMenu() {
+    sideMenuclosed.style.display = 'flex';
+    sideMenuOpen.style.display = 'none';
+    hMenu.style.display = 'flex';
+    hMenu.style.animation = 'apear 1.4s';
+}
 
 function cardContent() {
     mE1.addEventListener('click', () => {
-        cardElement = mE1.getAttribute('name');
-        alert(cardElement)
+        document.getElementById('card-container').appendChild(cardElement);
+        cardElement.innerHTML = education
+        closeMenu()
     });
+    
 }
 cardContent()
-cardContainer.innerHTML = cardElement

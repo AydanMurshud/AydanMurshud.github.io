@@ -364,7 +364,6 @@
             align-items: center;
     height: 100%;
     margin-left: 4em;
-    background-color: red;
   }
   body .container .main-page .card-container {
     -ms-flex-item-align: center;
@@ -375,7 +374,6 @@
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
-    background-color: blue;
   }
 }
 /*# sourceMappingURL=styles.css.map */
