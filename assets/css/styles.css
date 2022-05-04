@@ -123,7 +123,7 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    width: 4em;
+    width: 3em;
     height: 100%;
     padding: 0.5em;
     background-color: var(--mainColor);
@@ -134,23 +134,42 @@
             animation: menuClose 0.5s;
   }
   body .container .h-menu-closed .h-menu {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    margin-bottom: 1em;
-    padding: 0.5em;
-    -webkit-animation: apear 1s;
-            animation: apear 1s;
-  }
-  body .container .h-menu-closed .h-menu img {
-    height: 36px;
-    width: inherit;
-  }
-  body .container .h-menu-closed .pp-closed {
-    width: inherit;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    margin-bottom: 1em;
+    -webkit-animation: apear 1s;
+            animation: apear 1s;
+    -webkit-animation-delay: none;
+            animation-delay: none;
+  }
+  body .container .h-menu-closed .h-menu img {
+    height: 36px;
+    width: auto;
+  }
+  body .container .h-menu-closed .pp-closed {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   body .container .h-menu-closed .pp-closed img {
     width: 80%;
@@ -285,10 +304,20 @@
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    -webkit-box-pack: left;
+        -ms-flex-pack: left;
+            justify-content: left;
     list-style: none;
     margin-left: 1em;
   }
   body .container .h-menu-opened .open-menu-container .menu ul li a {
+    height: 100%;
+    text-align: left;
+    justify-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: inherit;
     margin-left: 1em;
     text-decoration: none;
     color: var(--secondaryColor);
@@ -318,7 +347,7 @@
     font-size: 1.5em;
   }
   body .container .main-page {
-    max-width: calc(100%-4em);
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -330,18 +359,23 @@
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-box-align: end;
-        -ms-flex-align: end;
-            align-items: flex-end;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     height: 100%;
-    margin-left: 4.2em;
+    margin-left: 4em;
+    background-color: red;
   }
   body .container .main-page .card-container {
+    -ms-flex-item-align: center;
+        -ms-grid-row-align: center;
+        align-self: center;
     width: 85%;
     padding: 1em;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
+    background-color: blue;
   }
 }
 /*# sourceMappingURL=styles.css.map */
