@@ -16,44 +16,6 @@ function mainPageSetUp() {
 }
 mainPageSetUp()
 
-const cardElement = document.createElement('div');
-cardElement.id = 'card-content';
-cardElement.className = 'card-content'
-cardElement.innerHTML = '<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea, praesentium maxime cumque cum facere unde vero eius numquam, quas animi a fugit cupiditate possimus corporis enim placeat, provident velit inventore? Cupiditate eveniet culpa eos minus hic nihil quasi recusandae facilis.</p>';
-
-document.getElementById('card-container').appendChild(cardElement);
-const education = `<img src="" alt="">
-<h2>Education</h2>
-<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat est saepe inventore labore. Nihil tempora omnis deserunt nobis debitis cumque quibusdam et blanditiis asperiores sint magnam dolor exercitationem porro dolore reiciendis architecto quidem, cupiditate ducimus provident nam. Aut sequi incidunt ab praesentium! Cupiditate eveniet repellat hic autem aut tempora iste quis tenetur sed consectetur delectus veritatis officia nobis, qui aspernatur.</p>
-<ul class="institution">
-  <li>
-      <img src="assets/images/logo_bg.png" alt="">
-      <ul>
-          <li>
-            <p>University of Economics - Varna</p>
-          </li>
-          <li>
-            <li>Bachelor degree - 2012/2016</li>
-            <li>Master degree - 2016/2017</li>
-          </li>
-      </ul>
-    </li>
-  <li>
-    <img src="assets/images/Logo_Software_University_(SoftUni)_-_blue.png" alt="">
-    <ul>
-        <li>
-          <p>Softwere University</p>
-        </li>
-        <li>
-          <li>Programming Basics - 2022</li>
-          <li>Programming Fundamentals - Pending...</li>
-        </li> 
-    </ul>
-  </li>
-</ul>
-</div>
-</div>`
-
 function closeMenu() {
     sideMenuclosed.style.display = 'flex';
     sideMenuOpen.style.display = 'none';
@@ -63,27 +25,57 @@ function closeMenu() {
 
 function cardContent() {
     mE1.addEventListener('click', () => {
-        document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = education;
-        
-        closeMenu()
+      let request = new XMLHttpRequest()
+      request.open('GET', '/assets/html/education.html', true);
+      request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+          let resp = request.responseText;
+          document.getElementById('card-container').innerHTML = resp;
+        }
+      };
+      request.send()
+
+      closeMenu()
     });
+  
     mE2.addEventListener('click', () => {
-        document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = `<p>Projects</p>`;
-        
-        closeMenu()
+        let request = new XMLHttpRequest()
+        request.open('GET', '/assets/html/projects.html', true);
+        request.onload = function () {
+        if (request.status >= 200 && request.status < 400) {
+          let resp = request.responseText;
+          document.getElementById('card-container').innerHTML = resp;
+        }
+      };
+      request.send()
+
+      closeMenu()
     });
+  
     mE3.addEventListener('click', () => {
-        document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML = `<p>About me</p>`;
-        
+      let request = new XMLHttpRequest()
+      request.open('GET', '/assets/html/experiance.html', true);
+      request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+        let resp = request.responseText;
+        document.getElementById('card-container').innerHTML = resp;
+      }
+    };
+    request.send()
+
         closeMenu()
     });
+  
     mE4.addEventListener('click', () => {
-        document.getElementById('card-container').appendChild(cardElement);
-        cardElement.innerHTML =  `<p>Contacts</p>`;
-        
+      let request = new XMLHttpRequest()
+      request.open('GET', '/assets/html/contacts.html', true);
+      request.onload = function () {
+      if (request.status >= 200 && request.status < 400) {
+        let resp = request.responseText;
+        document.getElementById('card-container').innerHTML = resp;
+      }
+    };
+    request.send()
         closeMenu()
     });
     
