@@ -12,7 +12,7 @@ function menuOpen() {
         sideMenuOpen.style.display = 'flex';
         sideMenuOpen.style.width = '300px';
         sideMenuclosed.style.display = 'none';
-        hMenu.style.display = 'none'
+        hMenu.style.display = 'none';
     });
 }
 menuOpen()
@@ -22,15 +22,12 @@ function menuClose() {
         sideMenuclosed.style.display = 'flex';
         sideMenuOpen.style.display = 'none';
         hMenu.style.display = 'flex';
-        hMenu.style.animation = 'apear 1.4s';
-        
-        
+        hMenu.style.animation = 'apear 1.0s';
     });
     mainPage.addEventListener('click', () => {
         sideMenuclosed.style.display = 'flex';
         sideMenuOpen.style.display = 'none';
-        hMenu.style.display = 'flex';
-        hMenu.style.animation = 'apear 1.4s';
+        hMenu.style.display = 'flex';        
     });
 }
 menuClose()

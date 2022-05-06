@@ -10,10 +10,10 @@ const cardContainer = document.createElement('div');
 cardContainer.id = 'card-container';
 cardContainer.className = 'card-container';
 
-function onload() {
+function aboutMe() {
   let request = new XMLHttpRequest()
-      request.open('GET', '/assets/html/aboutMe.html', true);
-      request.onload = function () {
+      request.open('GET', '/assets/cards/aboutMe.html', true);
+      request.onload =  function () {
       if (request.status >= 200 && request.status < 400) {
         let resp = request.responseText;
         document.getElementById('card-container').innerHTML = resp;
@@ -21,7 +21,7 @@ function onload() {
     };
     request.send()
 }
-onload()
+aboutMe()
 function mainPageSetUp() {
     document.body.appendChild(container);
     document.getElementById('container').appendChild(mainP);
@@ -41,12 +41,12 @@ function closeMenu() {
 function cardContent() {
     mE1.addEventListener('click', () => {
       let request = new XMLHttpRequest()
-      request.open('GET', '/assets/html/education.html', true);
+      request.open('GET', '/assets/cards/education.html', true);
       request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           let resp = request.responseText;
           document.getElementById('card-container').innerHTML = resp;
-        }
+        };
       };
       request.send()
 
@@ -55,12 +55,12 @@ function cardContent() {
   
     mE2.addEventListener('click', () => {
         let request = new XMLHttpRequest()
-        request.open('GET', '/assets/html/projects.html', true);
+        request.open('GET', '/assets/cards/projects.html', true);
         request.onload = function () {
         if (request.status >= 200 && request.status < 400) {
           let resp = request.responseText;
           document.getElementById('card-container').innerHTML = resp;
-        }
+          };
       };
       request.send()
 
@@ -69,12 +69,12 @@ function cardContent() {
   
     mE3.addEventListener('click', () => {
       let request = new XMLHttpRequest()
-      request.open('GET', '/assets/html/experiance.html', true);
+      request.open('GET', '/assets/cards/experiance.html', true);
       request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
         let resp = request.responseText;
         document.getElementById('card-container').innerHTML = resp;
-      }
+        };
     };
     request.send()
 
@@ -83,26 +83,28 @@ function cardContent() {
   
     mE4.addEventListener('click', () => {
       let request = new XMLHttpRequest()
-      request.open('GET', '/assets/html/contacts.html', true);
+      request.open('GET', '/assets/cards/contacts.html', true);
       request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
         let resp = request.responseText;
         document.getElementById('card-container').innerHTML = resp;
-      }
-    };
-    request.send()
+        }; 
+      };
+      
+      request.send()
+      
         closeMenu()
     });
   
     mE5.addEventListener('click', () => {
       let request = new XMLHttpRequest()
-      request.open('GET', '/assets/html/aboutMe.html', true);
+      request.open('GET', '/assets/cards/aboutMe.html', true);
       request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
         let resp = request.responseText;
         document.getElementById('card-container').innerHTML = resp;
-      }
-    };
+        };
+      };    
     request.send()
         closeMenu()
     });

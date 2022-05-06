@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Popins', sans-serif;
-    overflow-x: hidden !important ;
+    //overflow-x: hidden !important ;
 }
 :root{
     --mainColor: #299FC8;
@@ -30,7 +30,176 @@
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@media only screen and (max-width: 480px)  {
+@media only screen and (min-width: 776px) {
+    body{
+        overflow-x: hidden !important ;
+        .container{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url(/assets/images/19366.jpg);
+            background-size: cover;
+            overflow: hidden;
+            .h-menu-closed{
+                display: flex;
+                position: fixed;
+                flex-direction: column;
+                width: 4em;
+                height: 100%;
+                padding: 0.5em;
+                background-color: var(--mainColor);
+                border-radius: 0px 10px ;
+                box-shadow: 2px 3px 15px black;
+                align-items: center;
+                animation: menuClose 1s;
+                .h-menu{
+                    display: flex;
+                    align-items: center;
+                    width:fit-content;
+                    height: fit-content;
+                    margin-bottom: 1em;
+                    animation: apear 1s;
+                    animation-delay: none;
+                    img{
+                        height: 36px;
+                        width: auto;
+                    }
+                } 
+                .pp-closed{
+                    display: flex;
+                        width: 100%;
+                        height: fit-content;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width: 80%;
+                            border-radius: 50%;
+                            border: solid var(--secondaryColor) 2px;
+                            animation: apear 1s;
+                        }
+                    }
+            }
+            
+            .h-menu-opened{
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                width: 500px;
+                height:100%;
+                padding: 0.5em;
+                border-radius: 0px 10px ;
+                box-shadow: 2px 3px 15px black;
+                background-color: var(--mainColor);
+                color:var(--secondaryColor);
+                animation: menuOpen 0.5s;
+                z-index: 999;
+                .close-btn{
+                    height: 36px;
+                    width: 100%;
+                    display: flex;
+                    justify-content: end;
+                    animation: apear 1s;
+                }
+                .open-menu-container{
+                    height: inherit;
+                    width: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    animation: apear 1.9s;
+                    .intro{
+                        width: 100%;
+                        max-height: fit-content;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .pp-opened{
+                            width: ауто;
+                            height: cover;
+                            border-radius: 50%;
+                            border: solid var(--secondaryColor) 5px;
+                            box-shadow: black 0px 10px 15px;
+                            
+                        }
+                        h1{
+                            width: 90%;
+                            height: fit-content;
+                            margin-top: 0.5em;
+                            font-size: 2em;
+                            justify-content: center;
+                            text-align: center;
+                            overflow-y: hidden;
+                        }
+                        p{
+                            width: 90%;
+                            height: fit-content;
+                            margin-top: 1em;
+                            justify-content: center;
+                            text-align: justify;
+                            overflow-y: hidden;
+                            
+                        }
+                    }
+                    .menu{
+                        width: 90%;
+                        height: fit-content;
+                        margin-top: 1em;
+                        justify-content: center;
+                        overflow-y: hidden;
+                        ul{
+                            width: 100%;
+                            height: fit-content;
+                            display: flex;
+                            flex-direction: column;
+                            li{
+                                height: 50px;
+                                width: 100%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: left;
+                                list-style: none;
+                                margin-left: 1em;
+                                font-size: 1.5em;
+                            }
+                            li:hover{
+                                background-color: var(--secondaryColor);
+                                a{
+                                    color: var(--mainColor);
+                                }
+                            }
+                        }
+                    }
+                    .rating{
+                        height: 5rem;
+                        width: 100%;
+                        margin-bottom: 1em;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        justify-self:flex-end;
+                        p{
+                            font-size: 2.5em;
+                        }
+                    }
+                }
+            }
+            .main-page{
+                height: inherit;
+                width:100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                padding: 1em;
+                overflow: scroll;
+                margin-right: 5em;
+            }
+        }
+    }
+}
+@media only screen and (max-width: 775px){
     body{
         overflow-x: hidden !important ;
         .container{
@@ -40,6 +209,7 @@
             height: 100vh;
             background-image: url(/assets/images/19366.jpg);
             background-size: cover;
+            overflow-x: hidden !important;
             .h-menu-closed{
                 display: flex;
                 position: fixed;
@@ -61,7 +231,6 @@
                     img{
                         height: 36px;
                         width: auto;
-                        
                     }
                 } 
                 .pp-closed{
@@ -89,6 +258,7 @@
                 background-color: var(--mainColor);
                 color:var(--secondaryColor);
                 animation: menuOpen 0.5s;
+                z-index: 999;
                 .close-btn{
                     height: 36px;
                     width: 100%;
@@ -191,21 +361,13 @@
                 }
             }
             .main-page{
-                width: 100%;
-                display: flex;
-                flex-direction: column;
-                justify-self: right;
-                justify-content: center;
-                align-items: center;
-                height: 100%;
+               justify-self: flex-end;
+                height: 100vh;
+                width:200%;
                 margin-left: 4em;
-                .card-container{
-                    align-self: center;
-                    width: 85%;
-                    padding: 1em;
-                    height: fit-content;
-                }
+                display: flex;
+                justify-content: center;
             }
         }
     }
-}   
+}
