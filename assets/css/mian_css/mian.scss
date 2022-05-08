@@ -3,12 +3,14 @@
     margin: 0;
     padding: 0;
     font-family: 'Popins', sans-serif;
+    color: var(--thirdColor);
     //overflow-x: hidden !important ;
 }
 :root{
     --mainColor: #299FC8;
     --secondaryColor: #ffffff;
-    --darkModeMainColor: #080b25;
+    --thirdColor: #060b38;
+    --testColor: rgb(88, 52, 185);
 }
 @keyframes menuOpen {
     from{width: 4em;}
@@ -30,10 +32,14 @@
     from{opacity: 1;}
     to{opacity: 0;}
 }
-@media only screen and (min-width: 776px) {
+//desktop and laptop
+@media only screen and (min-width: 1024px) {
     body{
+        display: flex;
+        flex-direction: row;
         overflow-x: hidden !important ;
-        .container{
+        
+        .container {
             display: flex;
             flex-direction: column;
             position: relative;
@@ -41,7 +47,19 @@
             height: 100vh;
             background-image: url(/assets/images/19366.jpg);
             background-size: cover;
-            overflow: hidden;
+            background-position: none;
+            overflow-y:scroll;
+            overflow-x: hidden;
+            .mode{
+                height: 2em;
+                width: auto;
+                border: none;
+                background-color: transparent;
+                border-radius: 1px;
+                align-self: flex-end;
+                font-size: 2em;
+                cursor: pointer;
+            }
             .h-menu-closed{
                 display: flex;
                 position: fixed;
@@ -50,10 +68,19 @@
                 height: 100%;
                 padding: 0.5em;
                 background-color: var(--mainColor);
+                background-image: url(/assets/images/hexagon-svgrepo-com.svg);
+                background-repeat: repeat;
+                background-position: center;
+                background-size: 200px;
                 border-radius: 0px 10px ;
                 box-shadow: 2px 3px 15px black;
                 align-items: center;
-                animation: menuClose 1s;
+                
+                animation: menuClose 0.2s;
+                .modeC{
+                    width: autopx;
+                    justify-self: flex-end;
+                }
                 .h-menu{
                     display: flex;
                     align-items: center;
@@ -69,38 +96,48 @@
                 } 
                 .pp-closed{
                     display: flex;
-                        width: 100%;
-                        height: fit-content;
-                        align-items: center;
-                        justify-content: center;
-                        img{
-                            width: 80%;
-                            border-radius: 50%;
-                            border: solid var(--secondaryColor) 2px;
-                            animation: apear 1s;
-                        }
+                    width: 100%;
+                    height: fit-content;
+                    align-items: center;
+                    justify-content: center;
+                    img{
+                        width: 80%;
+                        border-radius: 50%;
+                        border: solid var(--secondaryColor) 2px;
+                        animation: apear 1s;
                     }
+                }
             }
             
             .h-menu-opened{
                 display: none;
                 flex-direction: column;
-                position: fixed;
+                position: absolute;
                 width: 500px;
                 height:100%;
                 padding: 0.5em;
                 border-radius: 0px 10px ;
                 box-shadow: 2px 3px 15px black;
                 background-color: var(--mainColor);
+                background-image: url(/assets/images/hexagon-svgrepo-com.svg);
+                background-repeat: repeat;
+                background-position: center;
+                background-size: 200px;
                 color:var(--secondaryColor);
-                animation: menuOpen 0.5s;
+                animation: menuOpen 0.3s;
                 z-index: 999;
                 .close-btn{
                     height: 36px;
                     width: 100%;
                     display: flex;
-                    justify-content: end;
+                    justify-content: flex-end;
                     animation: apear 1s;
+                    button{
+                        align-items: center;
+                        justify-content: center;
+                        padding: 5px 15px 5px 15px;
+                        border-radius: 5px;
+                    }
                 }
                 .open-menu-container{
                     height: inherit;
@@ -113,11 +150,14 @@
                         width: 100%;
                         max-height: fit-content;
                         display: flex;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
                         flex-direction: column;
+                        border-radius: 10px;
                         justify-content: center;
                         align-items: center;
                         .pp-opened{
-                            width: ауто;
+                            width: 175px;
                             height: cover;
                             border-radius: 50%;
                             border: solid var(--secondaryColor) 5px;
@@ -127,6 +167,7 @@
                         h1{
                             width: 90%;
                             height: fit-content;
+                            color: var(--secondaryColor);
                             margin-top: 0.5em;
                             font-size: 2em;
                             justify-content: center;
@@ -136,6 +177,7 @@
                         p{
                             width: 90%;
                             height: fit-content;
+                            color: var(--secondaryColor);
                             margin-top: 1em;
                             justify-content: center;
                             text-align: justify;
@@ -144,37 +186,42 @@
                         }
                     }
                     .menu{
-                        width: 90%;
+                        width: 100%;
                         height: fit-content;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
                         margin-top: 1em;
                         justify-content: center;
-                        overflow-y: hidden;
+                        overflow: hidden;
+                        border-radius: 10px;
                         ul{
                             width: 100%;
                             height: fit-content;
                             display: flex;
                             flex-direction: column;
                             li{
-                                height: 50px;
+                                height: 36px;
                                 width: 100%;
+                                color: var(--secondaryColor);
                                 display: flex;
                                 align-items: center;
                                 justify-content: left;
                                 list-style: none;
                                 margin-left: 1em;
-                                font-size: 1.5em;
+                                font-size: 1em;
                             }
                             li:hover{
                                 background-color: var(--secondaryColor);
-                                a{
-                                    color: var(--mainColor);
-                                }
+                                color: var(--mainColor);
                             }
                         }
                     }
                     .rating{
                         height: 5rem;
                         width: 100%;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
                         margin-bottom: 1em;
                         display: flex;
                         justify-content: center;
@@ -187,7 +234,7 @@
                 }
             }
             .main-page{
-                height: inherit;
+                height: 100vh;
                 width:100%;
                 display: flex;
                 flex-direction: column;
@@ -199,17 +246,32 @@
         }
     }
 }
-@media only screen and (max-width: 775px){
+//tablet screen
+@media only screen and (min-width:768px) and (max-width: 1023px){
     body{
-        overflow-x: hidden !important ;
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden !important ;;
         .container{
             display: flex;
+            flex-direction: column;
             position: relative;
             width: 100%;
             height: 100vh;
             background-image: url(/assets/images/19366.jpg);
             background-size: cover;
             overflow-x: hidden !important;
+            overflow-y: scroll;
+            .mode{
+                height: 2em;
+                width: auto;
+                border: none;
+                background-color: transparent;
+                border-radius: 1px;
+                align-self: flex-end;
+                font-size: 2em;
+                cursor: pointer;
+            }
             .h-menu-closed{
                 display: flex;
                 position: fixed;
@@ -218,6 +280,10 @@
                 height: 100%;
                 padding: 0.5em;
                 background-color: var(--mainColor);
+                background-image: url(/assets/images/hexagon-svgrepo-com.svg);
+                background-repeat: repeat;
+                background-position: center;
+                background-size: 200px;
                 align-items: center;
                 animation: menuClose 0.5s;
                 .h-menu{
@@ -229,7 +295,7 @@
                     animation: apear 1s;
                     animation-delay: none;
                     img{
-                        height: 36px;
+                        height: 26px;
                         width: auto;
                     }
                 } 
@@ -256,15 +322,23 @@
                 height:100%;
                 padding: 0.5em;
                 background-color: var(--mainColor);
+                background-image: url(/assets/images/hexagon-svgrepo-com.svg);
+                background-repeat: repeat;
+                background-position: center;
+                background-size: 200px;
                 color:var(--secondaryColor);
                 animation: menuOpen 0.5s;
-                z-index: 999;
+                z-index: 999; 
+                
                 .close-btn{
-                    height: 36px;
-                    width: 100%;
+                    height: cover;
+                    width: 10%;
                     display: flex;
-                    justify-content: end;
+                    align-self: flex-end;
                     animation: apear 1s;
+                    img{
+                        width: 46px;
+                    }
                 }
                 .open-menu-container{
                     height: inherit;
@@ -273,15 +347,19 @@
                     flex-direction: column;
                     justify-content: space-between;
                     animation: apear 1.9s;
+                    overflow-y:scroll;
                     .intro{
                         width: 100%;
                         height: auto;
                         display: flex;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
                         .pp-opened{
-                            width: 200px;
+                            width: 150px;
                             height: cover;
                             border-radius: 50%;
                             border: solid var(--secondaryColor) 5px;
@@ -291,6 +369,7 @@
                         h1{
                             width: 90%;
                             height: fit-content;
+                            color: var(--secondaryColor);
                             margin-top: 0.5em;
                             font-size: 2em;
                             justify-content: center;
@@ -300,7 +379,9 @@
                         p{
                             width: 90%;
                             height: fit-content;
-                            margin-top: 1em;
+                            color: var(--secondaryColor);
+                            margin-top: 0.75em;
+                            margin-bottom: 1em;
                             justify-content: center;
                             text-align: justify;
                             overflow-y: hidden;
@@ -308,11 +389,13 @@
                         }
                     }
                     .menu{
-                        width: 90%;
+                        width:100%;
                         height: fit-content;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
                         margin-top: 1em;
                         justify-content: center;
-                        overflow-y: hidden;
                         ul{
                             width: 100%;
                             height: fit-content;
@@ -321,34 +404,24 @@
                             li{
                                 height: 36px;
                                 width: 100%;
+                                color: var(--secondaryColor);
                                 display: flex;
                                 align-items: center;
                                 justify-content: left;
                                 list-style: none;
                                 margin-left: 1em;
-                                a{
-                                    height: 100%;
-                                    text-align: left;
-                                    justify-items: center;
-                                    align-items: center;
-                                    width: inherit;
-                                    margin-left: 1em;
-                                    text-decoration: none;
-                                    color: var(--secondaryColor);
-                                }
-                                
                             }
                             li:hover{
                                 background-color: var(--secondaryColor);
-                                a{
-                                    color: var(--mainColor);
-                                }
                             }
                         }
                     }
                     .rating{
                         height: 5rem;
                         width: 100%;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
                         margin-bottom: 1em;
                         display: flex;
                         justify-content: center;
@@ -361,9 +434,209 @@
                 }
             }
             .main-page{
-               justify-self: flex-end;
+                    height: 100vh;
+                    width:100%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: flex-end;
+                    padding: 1em;
+                    overflow: scroll;
+                    //margin-right: 5em;
+            }
+        }
+    }
+}
+//mobile screen
+@media only screen and (max-width: 767px){
+    
+    body{
+        display: flex;
+        flex-direction: row;
+        overflow-x: hidden !important ;
+        .container{
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-image: url(/assets/images/19366.jpg);
+            background-size: cover;
+            overflow-x: hidden !important;
+            overflow-y: scroll;
+            .mode{
+                height: 2em;
+                width: auto;
+                border: none;
+                background-color: transparent;
+                border-radius: 1px;
+                align-self: flex-end;
+                font-size: 2em;
+                cursor: pointer;
+            }
+            .h-menu-closed{
+                display: flex;
+                position: fixed;
+                flex-direction: column;
+                width: 3em;
+                height: 100%;
+                padding: 0.5em;
+                background-color: var(--mainColor);
+                background-image: url(/assets/images/hexagon-svgrepo-com.svg);
+                background-repeat: repeat;
+                background-position: center;
+                background-size: 200px;
+                align-items: center;
+                animation: menuClose 0.1s;
+                .h-menu{
+                    display: flex;
+                    align-items: center;
+                    width:fit-content;
+                    height: fit-content;
+                    margin-bottom: 1em;
+                    animation: apear 1s;
+                    animation-delay: none;
+                    img{
+                        height: 26px;
+                        width: auto;
+                    }
+                } 
+                .pp-closed{
+                    display: flex;
+                        width: 100%;
+                        height: fit-content;
+                        align-items: center;
+                        justify-content: center;
+                        img{
+                            width: 80%;
+                            border-radius: 50%;
+                            border: solid var(--secondaryColor) 2px;
+                            animation: apear 1s;
+                        }
+                    }
+            }
+            
+            .h-menu-opened{
+                display: none;
+                flex-direction: column;
+                position: fixed;
+                width: 300px;
+                height:100%;
+                padding: 0.5em;
+                background-color: var(--mainColor);
+                background-image: url(/assets/images/hexagon-svgrepo-com.svg);
+                background-repeat: repeat;
+                background-position: center;
+                background-size: 200px;
+                color:var(--secondaryColor);
+                animation: menuOpen 0.3s;
+                z-index: 999; 
+                
+                .close-btn{
+                    height: cover;
+                    width: 10%;
+                    display: flex;
+                    align-self: flex-end;
+                    animation: apear 1s;
+                    img{
+                        width: 46px;
+                    }
+                }
+                .open-menu-container{
+                    height: inherit;
+                    width: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    animation: apear 1.9s;
+                    overflow-y:scroll;
+                    .intro{
+                        width: 100%;
+                        height: auto;
+                        display: flex;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        .pp-opened{
+                            width: 175px;
+                            height: cover;
+                            border-radius: 50%;
+                            border: solid var(--secondaryColor) 5px;
+                            box-shadow: black 0px 10px 15px;
+                            
+                        }
+                        h1{
+                            width: 90%;
+                            height: fit-content;
+                            color: var(--secondaryColor);
+                            margin-top: 0.5em;
+                            font-size: 2em;
+                            justify-content: center;
+                            text-align: center;
+                            overflow-y: hidden;
+                        }
+                        p{
+                            width: 90%;
+                            height: fit-content;
+                            color: var(--secondaryColor);
+                            margin-top: 0.75em;
+                            justify-content: center;
+                            text-align: justify;
+                            overflow-y: hidden;
+                            
+                        }
+                    }
+                    .menu{
+                        width: 90%;
+                        height: fit-content;
+                        margin-top: 1em;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
+                        justify-content: center;
+                        ul{
+                            width: 100%;
+                            height: fit-content;
+                            display: flex;
+                            flex-direction: column;
+                            li{
+                                height: 36px;
+                                width: 100%;
+                                color: var(--secondaryColor);
+                                display: flex;
+                                align-items: center;
+                                justify-content: left;
+                                list-style: none;
+                                margin-left: 1em;
+                            }
+                            li:hover{
+                                background-color: var(--secondaryColor);
+                            }
+                        }
+                    }
+                    .rating{
+                        height: 5rem;
+                        width: 100%;
+                        margin-bottom: 1em;
+                        display: flex;
+                        background-color: #e7e6f323;
+                        backdrop-filter: blur(2px);
+                        border-radius: 10px;
+                        justify-content: center;
+                        align-items: center;
+                        justify-self:flex-end;
+                        p{
+                            font-size: 1.5em;
+                        }
+                    }
+                }
+            }
+            .main-page{
+                justify-self: flex-end;
                 height: 100vh;
-                width:200%;
+                width:100%;
                 margin-left: 4em;
                 display: flex;
                 justify-content: center;
