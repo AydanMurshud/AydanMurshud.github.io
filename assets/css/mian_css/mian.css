@@ -140,6 +140,8 @@
     -ms-flex-item-align: end;
         align-self: flex-end;
     font-size: 2em;
+    margin-right: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
   }
   body .container .h-menu-closed {
@@ -462,6 +464,8 @@
     -ms-flex-item-align: end;
         align-self: flex-end;
     font-size: 2em;
+    margin-right: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
   }
   body .container .h-menu-closed {
@@ -761,7 +765,9 @@
     border-radius: 1px;
     -ms-flex-item-align: end;
         align-self: flex-end;
-    font-size: 2em;
+    font-size: 1em;
+    margin-right: 1rem;
+    margin-top: 1rem;
     cursor: pointer;
   }
   body .container .h-menu-closed {
